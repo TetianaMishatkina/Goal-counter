@@ -1,0 +1,74 @@
+.main-page{
+  display: flex;
+  flex-direction: column;
+  background-color:white;
+  width: 700px;
+  height: 550px;
+  border-radius:30px;
+  position: relative;
+  &__title-container{
+     margin: 10px auto;
+  }
+  &__loading-container{
+    margin:40px auto;
+    width: 80px;
+    height: 20px;
+    color: #F46BB0;
+    background:
+      radial-gradient(farthest-side,currentColor 90%,#0000) left  /20px 20px,
+      radial-gradient(farthest-side,currentColor 90%,#0000) center/20px 20px,
+      radial-gradient(farthest-side,currentColor 90%,#0000) right /20px 20px,
+      linear-gradient(currentColor 0 0) center/100% 8px;
+    background-repeat: no-repeat;
+    position: relative;
+    animation: turn 1s infinite linear;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      inset:0;
+      background:inherit;
+      animation:inherit;
+      --s:calc(50% - 10px);
+      animation-direction: reverse;
+    }
+    &:after {
+      --s:calc(10px - 50%);
+    }
+  }
+
+
+  @keyframes turn {
+    0%   {transform: translate(var(--s,0)) rotate(0)}
+    100% {transform: translate(var(--s,0)) rotate(1turn)}
+  }
+  &__photo-container{
+    margin:10px auto;
+  }
+  &__count-info{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 30px auto;
+    font-size: 21px;
+    font-weight: 500;
+    & p{
+      margin-top:25px;
+    }
+  }
+  &__input-container{
+    margin: 20px auto;
+    & input{
+      height: 30px;
+      border-radius: 10px;
+      border: 1px solid black;
+      padding: 5px;
+    }
+    & button{
+      height: 30px;
+      margin-left:10px;
+      border-radius: 10px;
+      border: 1px solid black;
+    }
+  }
+}
