@@ -1,0 +1,4 @@
+<div class="input-container">
+  <input [(ngModel)]="inputValue" type="number" placeholder="Type a number"/>
+  <button [disabled]="!inputValue" (click)="handleClick()"  type="submit">send</button>
+</div>
